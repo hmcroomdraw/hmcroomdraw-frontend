@@ -1,5 +1,5 @@
 # HOW TO INSTALL
-1. [Install NPM][https://docs.npmjs.com/downloading-and-installing-node-js-and-npm]
+1. [Install NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 2. Clone this repo: `git clone https://github.com/hmcroomdraw/hmcroomdraw-frontend.git`
 3. Run `npm install`
 4. Run `npm start`
