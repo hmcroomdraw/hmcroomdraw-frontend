@@ -1,7 +1,7 @@
 # HOW TO INSTALL
-* 1. Clone this repo: `git clone https://github.com/hmcroomdraw/hmcroomdraw-frontend.git`
-* 2. Run `npm install`
-* 3. Run `npm start`
+*1. Clone this repo: `git clone https://github.com/hmcroomdraw/hmcroomdraw-frontend.git`
+*2. Run `npm install`
+*3. Run `npm start`
 
 # Getting Started with Create React App
 
