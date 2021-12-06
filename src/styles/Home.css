@@ -1,0 +1,51 @@
+#res-halls {
+    display: table;
+    margin: 0 auto;
+}
+
+#res-halls ul {
+    list-style: none;
+    margin: auto;
+}
+
+#res-halls ul li {
+    display: inline;
+}
+
+.active {
+    border: solid 5px #61dafb;
+}
+
+.buttons {
+    max-height: 3em;
+    font-size: 1.1em;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    border-radius: 5px 5px 5px 5px;
+    background: rgb(0,0,0);
+    padding: 0.35em 0.75em;
+    color: rgb(255,255,255);
+    display: inline-block;
+    cursor: pointer;
+    margin: 16px;
+}
+
+.between {
+    border: 3px dotted white;
+    margin-left:10px;
+    margin-right:10px;
+}
+
+.floor-buttons {
+    max-height: 2em;
+    font-size: 1.1em;
+    letter-spacing: .2em;
+    text-transform: lowercase;
+    border-radius: 5px 5px 5px 5px;
+    background: darkseagreen;
+    padding: 0.35em 0.75em;
+    color: black;
+    display: inline-block;
+    cursor: pointer;
+    margin: 16px;
+}

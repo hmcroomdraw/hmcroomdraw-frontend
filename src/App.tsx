@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
 import ImageMapper from 'react-img-mapper';
+import SignIn from "./components/SignIn";
+import MapDisplay from "./components/MapDisplay";
 
 function App() {
+    const [signedIn, setSignedIn] = useState('');
+
+    function handleClick(user: string) {
+        setSignedIn(user);
+    }
+
   return (
     <div className="App">
       <header className="App-header">
         <h1>HMC ROOM DRAW </h1>
-        <ImageMapper src={process.env.PUBLIC_URL+'/santi.png'} map={}/>
-        <img src={process.env.PUBLIC_URL+'/santi.png'} className="App-logo" alt="logo" />
-        <p>
-         <i>**UNDER CONSTRUCTION**</i>
-        </p>
-        <a
-          className="App-link"
-          href="https://github.com/hmcroomdraw/hmcroomdraw-frontend"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Here's the Github Page!
-        </a>
+          <div>
+          {signedIn === '' ?
+              <SignIn onClick={handleClick}></SignIn>
+              :
+              <MapDisplay user={signedIn} onClick={handleClick}></MapDisplay>
+          } </div>
+
       </header>
     </div>
   );
