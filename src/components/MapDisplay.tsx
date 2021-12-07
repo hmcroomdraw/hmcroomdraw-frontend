@@ -10,7 +10,6 @@ function MapDisplay(props: any) {
     useEffect(() => {fetch('http://127.0.0.1:5000/display/residence-halls')
         .then(response => {
             if (response.ok) {
-                console.log('response', response.json);
                 return response.json();
             }
             throw response;
@@ -21,7 +20,6 @@ function MapDisplay(props: any) {
         .catch(err => {
             console.error("error message:", err);
         })}, []);
-    console.log(resHalls);
 
     return (
         <div className={"home"}>
