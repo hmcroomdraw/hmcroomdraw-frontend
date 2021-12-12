@@ -24,7 +24,7 @@ function handleClick(floor_number: number) {
         <button key={floor.id} className={activeFloor === floor.floor_number ? 'active floor-buttons':'floor-buttons'} onClick={() =>handleClick(floor.floor_number)}>Floor {floor.floor_number}</button>
         )}
         <br/>
-        {floorData.image && <img src={floorData.image.url} height={400} width={400}/>}
+        <RoomSelector floorData={floorData}/>
     </div>
 )
 }
