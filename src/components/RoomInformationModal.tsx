@@ -2,7 +2,8 @@
 import '../styles/Modal.css'
 
 function RoomInformationModal(props:any) {
-    const roomInfo = props.roomInfo[0];
+    // console.log('roomModal',props.roomInfo);
+    let roomInfo = props.roomInfo[0];
     return (
         <div className={"backdrop"}>
             <div className={"modal"}>

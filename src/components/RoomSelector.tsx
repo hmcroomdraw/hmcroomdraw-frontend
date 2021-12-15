@@ -11,8 +11,8 @@ function RoomSelector(props: any) {
     const [roomInfo, setRoomInfo] = useState({});
 
     function handleClick(room: any) {
+        console.log(room);
         setActiveRoom(room.name);
-        setRoomInfo(props.floorData.rooms.filter((Room: any) => Room.id === activeRoom));
         toggleModal();
     }
 
@@ -43,7 +43,8 @@ function RoomSelector(props: any) {
         ]
     }
 
-    console.log(confirmedRoom);
+    console.log(activeRoom);
+    console.log('roomInfo', roomInfo);
     return (
         <div>
             <h2>You have selected {confirmedRoom} ! </h2>
@@ -51,7 +52,7 @@ function RoomSelector(props: any) {
             <ImageMapper src={URL} map={MAP} height={400} width={400}
             onClick={(area) => {handleClick(area)}}/>
             </div>
-            {modalOn && <RoomInformationModal roomInfo={roomInfo}
+            {modalOn && <RoomInformationModal roomInfo={props.floorData.rooms.filter((room: any) => room.id === activeRoom)}
             onClose={toggleModal} onOK={handleOk}/>}
         </div>
     )
