@@ -49,3 +49,7 @@
     cursor: pointer;
     margin: 16px;
 }
+
+.hide {
+    display: none;
+}

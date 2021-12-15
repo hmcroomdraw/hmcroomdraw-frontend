@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import './App.css';
-import ImageMapper from 'react-img-mapper';
 import SignIn from "./components/SignIn";
 import MapDisplay from "./components/MapDisplay";
 

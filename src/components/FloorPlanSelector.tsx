@@ -13,7 +13,7 @@ function FloorPlanSelector(props:any) {
     }
 const [activeFloor, setActiveFloor] = useState(2);
 const [floorData, setFloorData] = useState<FloorJSON>({});
-
+console.log('floorData', floorData);
 function handleClick(floor_number: number) {
     setActiveFloor(floor_number);
     setFloorData(props.floors.filter((floor: any) => floor.floor_number === floor_number)[0]);
@@ -24,7 +24,8 @@ function handleClick(floor_number: number) {
         <button key={floor.id} className={activeFloor === floor.floor_number ? 'active floor-buttons':'floor-buttons'} onClick={() =>handleClick(floor.floor_number)}>Floor {floor.floor_number}</button>
         )}
         <br/>
-        <RoomSelector floorData={floorData}/>
+        {floorData && <RoomSelector floorData={floorData}/>}
+
     </div>
 )
 }

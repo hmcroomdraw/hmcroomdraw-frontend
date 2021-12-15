@@ -1,34 +1,58 @@
-import {SetStateAction, useState} from "react";
+import React, {useState} from "react";
 import '../styles/Home.css';
-import * as events from "events";
+import ImageMapper from 'react-img-mapper';
+import RoomInformationModal from "./RoomInformationModal";
 
 
 function RoomSelector(props: any) {
-    const [activeRoom, setActiveRoom] = useState('');
-    const handleRoomClick = (e: any) => {
-        e.preventDefault();
-        setActiveRoom(e.currentTarget.value);
+    const [activeRoom, setActiveRoom] = useState('room1');
+    const [modalOn, setModalOn] = useState(false);
+    const [confirmedRoom, setConfirmedRoom] = useState('');
+    const [roomInfo, setRoomInfo] = useState({});
+
+    function handleClick(room: any) {
+        setActiveRoom(room.name);
+        setRoomInfo(props.floorData.rooms.filter((Room: any) => Room.id === activeRoom));
+        toggleModal();
     }
 
-    return (<div>
-    {props.floorData.image && <img src={props.floorData.image.url} height={400} width={400} alt={`floor plan`}
-    useMap={"#floorplan"}/>}
-            <map id={"floorplan"} name={"floorplan"}>
-                <area className={"buttons"} shape={"rect"} coords={"0,10,0,10"} href={"www.google.com"} alt={"room map"}/>
-            </map>
-            {/*<map id={"floorplan"} name={"floorplan"}>*/}
-            {/*    {props.floorData.room_coordinates.map((room:any) => {*/}
-            {/*        <area shape={"rect"} coords={`${room.x+10}, ${room.x-10}, ${room.y+10}, ${room.y-10}`}*/}
-            {/*              href="www.google.com" alt={'room mapping'} onClick={handleRoomClick}/>*/}
-            {/*    })}*/}
-                {/*{room_coords && Object.keys(room_coords).map((room:any) =>*/}
-                {/*{*/}
-                {/*    <area shape={"rect"} coords={`${room_coords.room.x+10}, ${room_coords.room.x-10}, ${room_coords.room.y+10}, ${room_coords.room.y-10}`}*/}
-                {/*    onClick={()=>handleRoomClick(room)} alt={`${room}`} />*/}
-                {/*})*/}
-                {/*}*/}
-            {/*</map>*/}
+    function toggleModal() {
+        setModalOn(!modalOn);
+    }
 
+    function handleOk(id: string) {
+        setConfirmedRoom(id);
+    }
+
+    const URL = props.floorData.image ? props.floorData.image.url : '';
+    const MAP = {
+        name: 'room-map',
+        areas : [
+            {
+                name: "room1",
+                shape: "circle",
+                coords: [100, 200, 20],
+                preFillColor: "red",
+            },
+            {
+                name: "room2",
+                shape: "circle",
+                coords: [250, 200, 20],
+                preFillColor: "red",
+            }
+        ]
+    }
+
+    console.log(confirmedRoom);
+    return (
+        <div>
+            <h2>You have selected {confirmedRoom} ! </h2>
+            <div className={modalOn ? 'hide': ''}>
+            <ImageMapper src={URL} map={MAP} height={400} width={400}
+            onClick={(area) => {handleClick(area)}}/>
+            </div>
+            {modalOn && <RoomInformationModal roomInfo={roomInfo}
+            onClose={toggleModal} onOK={handleOk}/>}
         </div>
     )
 }
