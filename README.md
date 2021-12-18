@@ -1,8 +1,22 @@
 # HOW TO INSTALL
 1. [Install NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 2. Clone this repo: `git clone https://github.com/hmcroomdraw/hmcroomdraw-frontend.git`
-3. Run `npm install`
-4. Run `npm start`
+3. Clone the backend repo from `https://github.com/hmcroomdraw/hmcroomdraw-backend.git`
+4. Checkout to the server branch using `git checkout server`
+5. Follow the instructions to start the server
+6. Run `npm install`
+7. Run `npm start`
+
+
+----
+## TABLE OF CONTENTS
+APP -> Handles the Sign In and MapDisplay Components. The center of this app.
+SIGNIN -> Handles Signing In by a user. As long as the input field is not empty, a user will be provided access. Authorization not implemented.
+MAPDISPLAY -> Fetches information about the resHalls available from the server and passes it along to the ResHallsSelector component.
+RESHALLSSELECTOR -> Receives a list of reshalls from MapDisplay, displays it as buttons. Upon the onClick event being fired on one of the buttons, will pass along the list of floors and related information by fetching from the server along to the FloorPlanSelector component.
+FLOORPLANSELECTOR -> Receives information from the ResHallselector component and displays the floors available as buttons. Upon the onClick event being fired on one of the buttons, will pass along the list of rooms and their information along to the RoomSelector component.
+ROOMSELECTOR -> Receives information on the rooms available in a particular floor. Displays a floor plan map and has clickable points on the map. Upon the onClick event being fired on these clickable points, it passes the information about the room to the RoomInformationModal component.
+ROOMINFORMATIONMODAL -> Recieves information about the room which it displays as a model. There are two options OK/Cancel. If clicked on OK, that is the confirmation of the selection of that room, which it will display as a simple HTML text on the main page.
 
 # Getting Started with Create React App
 
