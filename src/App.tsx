@@ -11,7 +11,7 @@ function App() {
     }
 
   return (
-    <div className="App">
+    <div className="App" data-test-id={"app"}>
       <header className="App-header">
         <h1>HMC ROOM DRAW </h1>
           <div>

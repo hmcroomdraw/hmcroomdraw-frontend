@@ -24,7 +24,7 @@ function RoomInformationModal(props:any) {
                 <button className={"alert-button"} type={"button"}
                         onClick={() => {
                             props.onClose();
-                            props.onOK(roomInfo.id);
+                            props.onOK(roomInfo.id, roomInfo.residence_hall_name, roomInfo.floor_number);
                         }}>
                     OK
                 </button>
