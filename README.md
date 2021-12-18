@@ -10,13 +10,13 @@
 
 ----
 ## TABLE OF CONTENTS
-APP -> Handles the Sign In and MapDisplay Components. The center of this app.
-SIGNIN -> Handles Signing In by a user. As long as the input field is not empty, a user will be provided access. Authorization not implemented.
-MAPDISPLAY -> Fetches information about the resHalls available from the server and passes it along to the ResHallsSelector component.
-RESHALLSSELECTOR -> Receives a list of reshalls from MapDisplay, displays it as buttons. Upon the onClick event being fired on one of the buttons, will pass along the list of floors and related information by fetching from the server along to the FloorPlanSelector component.
-FLOORPLANSELECTOR -> Receives information from the ResHallselector component and displays the floors available as buttons. Upon the onClick event being fired on one of the buttons, will pass along the list of rooms and their information along to the RoomSelector component.
-ROOMSELECTOR -> Receives information on the rooms available in a particular floor. Displays a floor plan map and has clickable points on the map. Upon the onClick event being fired on these clickable points, it passes the information about the room to the RoomInformationModal component.
-ROOMINFORMATIONMODAL -> Recieves information about the room which it displays as a model. There are two options OK/Cancel. If clicked on OK, that is the confirmation of the selection of that room, which it will display as a simple HTML text on the main page.
+1. APP -> Handles the Sign In and MapDisplay Components. The center of this app.
+2. SIGNIN -> Handles Signing In by a user. As long as the input field is not empty, a user will be provided access. Authorization not implemented.
+3. MAPDISPLAY -> Fetches information about the resHalls available from the server and passes it along to the ResHallsSelector component.
+4. RESHALLSSELECTOR -> Receives a list of reshalls from MapDisplay, displays it as buttons. Upon the onClick event being fired on one of the buttons, will pass along the list of floors and related information by fetching from the server along to the FloorPlanSelector component.
+5. FLOORPLANSELECTOR -> Receives information from the ResHallselector component and displays the floors available as buttons. Upon the onClick event being fired on 6. one of the buttons, will pass along the list of rooms and their information along to the RoomSelector component.
+7. ROOMSELECTOR -> Receives information on the rooms available in a particular floor. Displays a floor plan map and has clickable points on the map. Upon the onClick event being fired on these clickable points, it passes the information about the room to the RoomInformationModal component.
+8. ROOMINFORMATIONMODAL -> Recieves information about the room which it displays as a model. There are two options OK/Cancel. If clicked on OK, that is the confirmation of the selection of that room, which it will display as a simple HTML text on the main page.
 
 # Getting Started with Create React App
 
